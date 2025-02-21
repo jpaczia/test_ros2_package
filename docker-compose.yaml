@@ -1,7 +1,9 @@
 services:
   test:
     container_name: test
-    image: ros:humble
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - .:/ros2_ws/src/test_ros2_package  
     command: bash
